@@ -1,4 +1,12 @@
-This repo application has frontend , backend and db
+# Multi-Tier Containerized Application
 
-Task 1 : Containerize frontend appplication written in Go , this listens on 80port
-Task 2:  Containerize backend application written in Java 
+This repository contains a complete application stack with a frontend, backend, and database.
+
+## Tasks
+
+- **Task 1**: Containerize the frontend application written in Go, which listens on port 80.
+- **Task 2**: Containerize the backend application written in Java.
+
+## Upcoming
+
+- **Task 3**: Containerize the database service and connect it with the backend.

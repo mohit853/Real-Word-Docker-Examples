@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./web
+    ports:
+      - "80:80"
+    depends_on:
+      - words
+
+  words:
+    build:
+      context: ./words
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: wordsdb
+    volumes:
+      - ./db/words.sql:/docker-entrypoint-initdb.d/words.sql
+    ports:
+      - "5432:5432"
+
